@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package document_search;
+
+import "google/protobuf/struct.proto";
+
+service DocumentSearchService {
+  rpc RetrieveDocuments(DocumentSearchRequest) returns (stream DocumentSearchResponse);
+}
+
+message DocumentSearchRequest {
+  string query = 1;
+  optional int32 k = 2;
+}
+
+message DocumentSearchResponse {
+  google.protobuf.Struct payload = 1;
+}

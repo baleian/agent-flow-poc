@@ -1,0 +1,35 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+  document_search:
+    build:
+      context: document-search
+    container_name: document_search
+    ports:
+      - "50051:50051"
+volumes:
+  ollama-data:
+
+
+  # sub_agent:
+  #   build: 
+  #     context: sub-agent
+  #   container_name: sub_agent
+  #   ports:
+  #     - "50051:50052"
+  #   depends_on:
+  #     - ollama
+  #   environment:
+  #     - OLLAMA_HOST=http://host.docker.internal:11434

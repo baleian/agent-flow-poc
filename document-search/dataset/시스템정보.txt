@@ -1,0 +1,7 @@
+1. DB Server
+    - Host: 192.168.0.12
+    - User: mydbaccount
+    - Password: abc!@#1213
+2. Web Server
+    - Host: 192.168.1.142
+    - Port: 8080
