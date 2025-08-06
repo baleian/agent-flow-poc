@@ -19,6 +19,12 @@ services:
     container_name: document_search
     ports:
       - "50051:50051"
+  my_app:
+    build:
+      context: my-app
+    container_name: my_app
+    ports:
+      - "2024:2024"
 volumes:
   ollama-data:
 

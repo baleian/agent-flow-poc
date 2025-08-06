@@ -1,0 +1,7 @@
+langgraph
+langgraph-cli[inmem]
+langchain
+langchain_ollama
+grpcio
+grpcio-tools
+protobuf

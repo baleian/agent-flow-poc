@@ -8,10 +8,10 @@ docker-compose up --build -d
 docker exec -it ollama ollama pull qwen3:8b
 ```
 
-### Run langgraph GUI
+### langgraph GUI
 ```bash
-cd my-app
-langgraph dev
+https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+http://127.0.0.1:2024/docs
 ```
 
 ### Shutdown Containers
