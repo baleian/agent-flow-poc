@@ -42,7 +42,7 @@ You are a specialized AI assistant for [Company Name], exclusively designed to s
 model = ChatOllama(
     model=os.environ["MODEL_NAME"], 
     base_url=os.environ["MODEL_BASE_URL"], 
-    # reasoning=True
+    reasoning=True
 )
 tools = [get_current_time, get_documents]
 model_with_tools = model.bind_tools(tools)

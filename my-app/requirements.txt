@@ -5,3 +5,5 @@ langchain_ollama
 grpcio
 grpcio-tools
 protobuf
+rich
+dotenv
