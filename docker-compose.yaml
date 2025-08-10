@@ -1,3 +1,5 @@
+volumes:
+  ollama-data:
 services:
   ollama:
     image: ollama/ollama
@@ -13,20 +15,36 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+  sqlite_server:
+    build:
+      context: sqlite-server
+    container_name: sqlite_server
+    ports:
+      - "8000:8000"
   document_search:
     build:
       context: document-search
     container_name: document_search
     ports:
       - "50051:50051"
-  my_app:
+  dw_search:
     build:
-      context: my-app
-    container_name: my_app
+      context: dw-search
+    container_name: dw_search
     ports:
-      - "2024:2024"
-volumes:
-  ollama-data:
+      - "50052:50051"
+    
+
+#   my_app:
+#     build:
+#       context: my-app
+#     container_name: my_app
+#     ports:
+#       - "2024:2024"
+#     depends_on:
+#       sqlite_server:
+#         condition: service_healthy
+
 
 
   # sub_agent:
