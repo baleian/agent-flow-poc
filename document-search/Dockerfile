@@ -10,4 +10,4 @@ COPY ./vectorstore /vectorstore
 
 EXPOSE 50051
 
-CMD ["python", "-m", "app.server"]
+CMD ["python", "-m", "app.server", "-u"]
