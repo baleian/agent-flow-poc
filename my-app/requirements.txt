@@ -7,3 +7,4 @@ grpcio-tools
 protobuf
 rich
 dotenv
+pydantic
